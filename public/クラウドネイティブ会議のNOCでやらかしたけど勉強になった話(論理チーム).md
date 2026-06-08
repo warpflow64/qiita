@@ -7,7 +7,7 @@ tags:
   - noc
   - クラウドネイティブ会議
 private: true
-updated_at: '2026-06-08T23:21:46+09:00'
+updated_at: '2026-06-08T23:54:50+09:00'
 id: 6c6bfc3269a337cb8840
 organization_url_name: null
 slide: false
