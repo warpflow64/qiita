@@ -1,12 +1,12 @@
 ---
 title: Macでwindowsのブートディスクを作る方法
 tags:
-  - 'windows'
-  - 'Mac'
-  - 'Windows11InstallationAssistant'
+  - Mac
+  - Windows
+  - Windows11InstallationAssistant
 private: true
-updated_at: ''
-id: null
+updated_at: '2026-07-05T02:19:15+09:00'
+id: 449084f3d235e8ada9d7
 organization_url_name: null
 slide: false
 ignorePublish: false
