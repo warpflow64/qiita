@@ -3,6 +3,7 @@ title: Macでwindowsのブートディスクを作る方法
 tags:
   - 'windows'
   - 'Mac'
+  - 'wimlib'
   - 'Windows11InstallationAssistant'
 private: true
 updated_at: ''
