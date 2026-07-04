@@ -1,5 +1,5 @@
 ---
-title: Macでwindowsのブートディスクを作る方法
+title: MacでWindowsのブートディスクを作る方法
 tags:
   - Mac
   - Windows
@@ -26,21 +26,21 @@ agreed_posting_campaign_term: false
 
 # 皆さんはWindowsのブートディスクをどう作りますか？
 
-私はいつも Mac や Linux を使って生活をしています。それこそwindowsを触ることなんてここ1ヶ月で2回くらいでした。
-ただ、不意にwindowsを使わなければならないターンといのは来ると思います。
-ですが、windowsのブートディスクを作るのはただならぬ努力が必要なんです！！
+私はいつも Mac や Linux を使って生活をしています。それこそWindowsを触ることなんてここ1ヶ月で2回くらいでした。
+ただ、不意にWindowsを使わなければならないターンといのは来ると思います。
+ですが、Windowsのブートディスクを作るのはただならぬ努力が必要なんです！！
 それを今回は備忘録的に書いていきたいと思います。
 
 ## Windows11InstallationAssistant の存在
-基本的にwindowsのインストールメディアを作るときにお世話にあるソフトでMicrsoft公式から頒布されいてるソフトで"Windows"なら簡単にUSBやCDをWindowsのインストールメディアにできます。
- **ですが、これはwindows専用です**
+基本的にWindowsのインストールメディアを作るときにお世話にあるソフトでMicrsoft公式から頒布されいてるソフトで"Windows"なら簡単にUSBやCDをWindowsのインストールメディアにできます。
+ **ですが、これはWindows専用です**
 なのでLinuxやMacでやる方法を探していました。
 
 # やり方
 ## 用意するもの
 - USBメモリー 32GB推奨
 - PC(Mac)
-- Windowsのiso [ダウンロードページ](https://www.microsoft.com/ja-jp/software-download/windows11)
+- Windowsのiso [ダウンロードページ](https://www.microsoft.com/ja-jp/software-download/Windows11)
 
 ## Mac wimlib のインストール
 推奨コマンド
