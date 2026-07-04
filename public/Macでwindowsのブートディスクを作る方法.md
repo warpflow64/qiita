@@ -1,5 +1,5 @@
 ---
-title: MacでWindowsのブートディスクを作る方法
+title: Mac で Windows のブートディスクを作る方法
 tags:
   - Mac
   - Windows
@@ -21,20 +21,20 @@ agreed_posting_campaign_term: false
 
 # TL;DR
 - Mac や Linux では Windows11InstallationAssistant が使えない
-- ISOファイルから書き込むにもbalenaEtcherなどでは 4GB 問題でできない
+- ISO ファイルから書き込むにも balenaEtcher などでは 4GB 問題でできない
 - wimlib と言うツールを使えばいける！
 
-# 皆さんはWindowsのブートディスクをどう作りますか？
+# 皆さんは Windows のブートディスクをどう作りますか？
 
-私はいつも Mac や Linux を使って生活をしています。それこそWindowsを触ることなんてここ1ヶ月で2回くらいでした。
-ただ、不意にWindowsを使わなければならないターンといのは来ると思います。
-ですが、Windowsのブートディスクを作るのはただならぬ努力が必要なんです！！
+私はいつも Mac や Linux を使って生活をしています。それこそ Windows を触ることなんてここ1ヶ月で2回くらいでした。
+ただ、不意に Windows を使わなければならないターンといのは来ると思います。
+ですが、 Windows のブートディスクを作るのはただならぬ努力が必要なんです！！
 それを今回は備忘録的に書いていきたいと思います。
 
 ## Windows11InstallationAssistant の存在
-基本的にWindowsのインストールメディアを作るときにお世話にあるソフトでMicrsoft公式から頒布されいてるソフトで"Windows"なら簡単にUSBやCDをWindowsのインストールメディアにできます。
- **ですが、これはWindows専用です**
-なのでLinuxやMacでやる方法を探していました。
+基本的に Windows のインストールメディアを作るときにお世話にあるソフトで Micrsoft 公式から頒布されいてるソフトで "Windows" なら簡単に USB や CD を Windows のインストールメディアにできます。
+ **ですが、これは Windows 専用です**
+なので Linux や Mac でやる方法を探していました。
 
 # やり方
 ## 用意するもの
@@ -43,35 +43,35 @@ agreed_posting_campaign_term: false
 - Windowsのiso [ダウンロードページ](https://www.microsoft.com/ja-jp/software-download/Windows11)
 
 ## Mac wimlib のインストール
-推奨コマンド
+インストールコマンド
 ```zsh
 brew install wimlib
 ```
 
-## diskutilでの操作
+## diskutil での操作
 
-### USBのディスク番号を確認
+### USB のディスク番号を確認
 ```zsh
 diskutil list
 ```
 
-### USBをFAT32/GPTでフォーマット(diskNは自分の番号に置き換え)
+### USB を FAT32/GPT でフォーマット( diskN は自分の番号に置き換え)
 ```zsh
 diskutil eraseDisk MS-DOS "WINUSB" GPT /dev/diskN
 ```
 
-### ISOをマウント(isoファイルは自分のisoファイルに置き換え)
+### ISO をマウント( iso ファイルは自分の iso ファイルに置き換え)
 ```zsh
 hdiutil mount ~/Downloads/Win11_24H2_Japanese_x64.iso
 ```
 
-## rsyncコマンドで 4GB 未満のファイルの移動
-### install.wim以外を全部コピー(ボリューム名は実際の表示に合わせる)
+## rsync コマンドで 4GB 未満のファイルの移動
+### install.wim 以外を全部コピー(ボリューム名は実際の表示に合わせる)
 ```zsh
 rsync -avh --progress --exclude=sources/install.wim /Volumes/CCCOMA_X64FRE_JA-JP_DV9/ /Volumes/WINUSB/
 ```
 
-## wimlib で install.wimを4GB未満に分割してコピー
+## wimlib で install.wim を 4GB 未満に分割してコピー
 ```zsh
 wimlib-imagex split /Volumes/CCCOMA_X64FRE_JA-JP_DV9/sources/install.wim /Volumes/WINUSB/sources/install.swm 3800
 ```
